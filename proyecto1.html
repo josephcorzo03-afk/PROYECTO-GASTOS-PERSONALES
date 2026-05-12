@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>NEUTRAL FINANCE AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+ROOT
+========================================================= */
+
+:root{
+
+    --bg:#f4f4f2;
+    --bg-soft:#fafaf9;
+
+    --card:#ffffff;
+
+    --text:#18181b;
+    --text2:#52525b;
+    --text3:#a1a1aa;
+
+    --line:#e4e4e7;
+
+    --primary:#27272a;
+    --primary-light:#3f3f46;
+
+    --green:#166534;
+    --green-soft:#dcfce7;
+
+    --red:#991b1b;
+    --red-soft:#fee2e2;
+
+    --blue:#1d4ed8;
+    --blue-soft:#dbeafe;
+
+    --orange:#9a3412;
+    --orange-soft:#ffedd5;
+
+    --radius:28px;
+
+    --shadow:
+        0 15px 40px rgba(0,0,0,.06);
+
+}
+
+/* =========================================================
+GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:
+        radial-gradient(circle at top left,#ffffff,#f4f4f2);
+    color:var(--text);
+}
+
+/* =========================================================
+APP
+========================================================= */
+
+.app{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    min-height:100vh;
+}
+
+/* =========================================================
+SIDEBAR
+========================================================= */
+
+.sidebar{
+
+    background:#18181b;
+    color:white;
+
+    padding:30px;
+
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.logo-box{
+    width:68px;
+    height:68px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#3f3f46,#71717a);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:30px;
+    font-weight:900;
+}
+
+.logo h1{
+    font-size:26px;
+    font-weight:900;
+}
+
+.logo p{
+    color:#d4d4d8;
+    font-size:13px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.menu button{
+
+    border:none;
+    background:transparent;
+    color:#d4d4d8;
+
+    padding:18px;
+    border-radius:18px;
+
+    text-align:left;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+.menu button:hover{
+    background:rgba(255,255,255,.06);
+}
+
+.menu button.active{
+    background:white;
+    color:#18181b;
+}
+
+.ai-box{
+
+    margin-top:auto;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:24px;
+}
+
+.ai-box h3{
+    margin-bottom:12px;
+}
+
+.ai-box p{
+    color:#d4d4d8;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* =========================================================
+MAIN
+========================================================= */
+
+.main{
+    padding:40px;
+}
+
+/* =========================================================
+TOPBAR
+========================================================= */
+
+.topbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:40px;
+}
+
+.topbar h2{
+    font-size:42px;
+    font-weight:900;
+}
+
+.topbar p{
+    color:var(--text2);
+    margin-top:8px;
+}
+
+.btn{
+    border:none;
+    background:#18181b;
+    color:white;
+
+    padding:18px 26px;
+
+    border-radius:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================================================
+CARDS
+========================================================= */
+
+.stats{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+
+    margin-bottom:35px;
+}
+
+.card{
+
+    background:rgba(255,255,255,.8);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    border-radius:var(--radius);
+
+    padding:28px;
+
+    box-shadow:var(--shadow);
+}
+
+.stat-top{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.icon{
+
+    width:58px;
+    height:58px;
+
+    border-radius:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+}
+
+.green{
+    background:var(--green-soft);
+    color:var(--green);
+}
+
+.red{
+    background:var(--red-soft);
+    color:var(--red);
+}
+
+.blue{
+    background:var(--blue-soft);
+    color:var(--blue);
+}
+
+.orange{
+    background:var(--orange-soft);
+    color:var(--orange);
+}
+
+.card h4{
+    color:var(--text2);
+    font-size:15px;
+}
+
+.card h1{
+    font-size:38px;
+    font-weight:900;
+}
+
+.card p{
+    margin-top:10px;
+    color:var(--text3);
+}
+
+/* =========================================================
+GRID
+========================================================= */
+
+.grid{
+
+    display:grid;
+    grid-template-columns:1.4fr .9fr;
+
+    gap:25px;
+}
+
+/* =========================================================
+ANALYSIS PANEL
+========================================================= */
+
+.analysis{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:32px;
+
+    box-shadow:var(--shadow);
+}
+
+.section-title{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:28px;
+}
+
+.section-title h3{
+    font-size:28px;
+}
+
+.input-group{
+
+    margin-bottom:20px;
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:var(--text2);
+
+    font-weight:600;
+}
+
+.input-group input,
+.input-group select{
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    border:1px solid var(--line);
+
+    background:#fafafa;
+
+    font-size:15px;
+
+    outline:none;
+}
+
+.input-group input:focus{
+    border-color:#71717a;
+}
+
+/* =========================================================
+BUTTONS
+========================================================= */
+
+.analyze-btn{
+
+    width:100%;
+
+    margin-top:10px;
+
+    border:none;
+
+    background:linear-gradient(135deg,#18181b,#3f3f46);
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:20px;
+
+    font-size:16px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.analyze-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================================================
+AI RESULT
+========================================================= */
+
+.ai-result{
+
+    margin-top:28px;
+
+    background:#fafaf9;
+
+    border:1px solid var(--line);
+
+    border-radius:24px;
+
+    padding:24px;
+
+    display:none;
+}
+
+.ai-result h4{
+    margin-bottom:16px;
+    font-size:20px;
+}
+
+.analysis-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:20px;
+}
+
+.analysis-box{
+
+    background:white;
+
+    border:1px solid var(--line);
+
+    padding:20px;
+
+    border-radius:18px;
+}
+
+.analysis-box span{
+    color:var(--text2);
+    font-size:14px;
+}
+
+.analysis-box h2{
+    margin-top:10px;
+    font-size:24px;
+}
+
+/* =========================================================
+CHART
+========================================================= */
+
+.chart-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:32px;
+
+    box-shadow:var(--shadow);
+}
+
+.chart{
+
+    height:300px;
+
+    display:flex;
+    align-items:flex-end;
+
+    gap:18px;
+
+    margin-top:30px;
+}
+
+.bar{
+
+    flex:1;
+
+    background:linear-gradient(to top,#18181b,#71717a);
+
+    border-radius:18px 18px 8px 8px;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.bar:hover{
+    transform:translateY(-5px);
+}
+
+.bar span{
+
+    position:absolute;
+
+    bottom:-34px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:13px;
+
+    color:var(--text2);
+}
+
+/* =========================================================
+TABLE
+========================================================= */
+
+.table-card{
+
+    margin-top:25px;
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:32px;
+
+    box-shadow:var(--shadow);
+}
+
+.table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+}
+
+.table th{
+
+    text-align:left;
+
+    color:var(--text2);
+
+    padding-bottom:18px;
+}
+
+.table td{
+
+    padding:18px 0;
+
+    border-top:1px solid var(--line);
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media(max-width:1200px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:900px){
+
+    .app{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        display:none;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .analysis-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =====================================================
+    SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-box">
+                ₿
+            </div>
+
+            <div>
+                <h1>Finance AI</h1>
+                <p>Smart Money System</p>
+            </div>
+
+        </div>
+
+        <div class="menu">
+
+            <button class="active">📊 Dashboard</button>
+            <button>💳 Gastos</button>
+            <button>📈 Analíticas</button>
+            <button>🏦 Ahorros</button>
+            <button>🧾 Facturas</button>
+            <button>🎯 Objetivos</button>
+            <button>⚙ Configuración</button>
+
+        </div>
+
+        <div class="ai-box">
+
+            <h3>Asistente IA Financiero</h3>
+
+            <p>
+                El sistema analizará automáticamente
+                tus ingresos, gastos y hábitos financieros
+                para darte recomendaciones inteligentes.
+            </p>
+
+        </div>
+
+    </aside>
+
+    <!-- =====================================================
+    MAIN
+    ====================================================== -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <div>
+                <h2>Control Financiero</h2>
+                <p>Analiza tu economía personal automáticamente</p>
+            </div>
+
+            <button class="btn">
+                Exportar Reporte
+            </button>
+
+        </div>
+
+        <!-- STATS -->
+
+        <section class="stats">
+
+            <div class="card">
+
+                <div class="stat-top">
+
+                    <div>
+                        <h4>Balance Total</h4>
+                        <h1 id="balance">$0</h1>
+                    </div>
+
+                    <div class="icon green">
+                        💰
+                    </div>
+
+                </div>
+
+                <p>Dinero disponible actualmente</p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="stat-top">
+
+                    <div>
+                        <h4>Ingresos</h4>
+                        <h1 id="income">$0</h1>
+                    </div>
+
+                    <div class="icon blue">
+                        📈
+                    </div>
+
+                </div>
+
+                <p>Total mensual ingresado</p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="stat-top">
+
+                    <div>
+                        <h4>Gastos</h4>
+                        <h1 id="expenses">$0</h1>
+                    </div>
+
+                    <div class="icon red">
+                        📉
+                    </div>
+
+                </div>
+
+                <p>Dinero utilizado este mes</p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="stat-top">
+
+                    <div>
+                        <h4>Ahorro</h4>
+                        <h1 id="saving">$0</h1>
+                    </div>
+
+                    <div class="icon orange">
+                        🏦
+                    </div>
+
+                </div>
+
+                <p>Capacidad de ahorro estimada</p>
+
+            </div>
+
+        </section>
+
+        <!-- GRID -->
+
+        <section class="grid">
+
+            <!-- ANALYSIS -->
+
+            <div class="analysis">
+
+                <div class="section-title">
+                    <h3>Analizador Financiero IA</h3>
+                </div>
+
+                <div class="input-group">
+                    <label>Dinero total disponible</label>
+
+                    <input type="number" id="money"
+                    placeholder="Ej: 5000">
+                </div>
+
+                <div class="input-group">
+                    <label>Ingresos mensuales</label>
+
+                    <input type="number" id="monthlyIncome"
+                    placeholder="Ej: 2500">
+                </div>
+
+                <div class="input-group">
+                    <label>Gastos mensuales</label>
+
+                    <input type="number" id="monthlyExpenses"
+                    placeholder="Ej: 1200">
+                </div>
+
+                <div class="input-group">
+                    <label>Objetivo financiero</label>
+
+                    <select id="goal">
+
+                        <option>Aumentar ahorros</option>
+                        <option>Comprar casa</option>
+                        <option>Viajar</option>
+                        <option>Invertir</option>
+                        <option>Reducir gastos</option>
+
+                    </select>
+                </div>
+
+                <button class="analyze-btn"
+                onclick="analyzeFinance()">
+
+                    Analizar Finanzas
+
+                </button>
+
+                <!-- RESULT -->
+
+                <div class="ai-result" id="result">
+
+                    <h4>Resultado del análisis IA</h4>
+
+                    <p id="message"></p>
+
+                    <div class="analysis-grid">
+
+                        <div class="analysis-box">
+
+                            <span>Nivel financiero</span>
+
+                            <h2 id="level">-</h2>
+
+                        </div>
+
+                        <div class="analysis-box">
+
+                            <span>Capacidad ahorro</span>
+
+                            <h2 id="capacity">-</h2>
+
+                        </div>
+
+                        <div class="analysis-box">
+
+                            <span>Riesgo financiero</span>
+
+                            <h2 id="risk">-</h2>
+
+                        </div>
+
+                        <div class="analysis-box">
+
+                            <span>Recomendación IA</span>
+
+                            <h2 id="recommendation">-</h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CHART -->
+
+            <div class="chart-card">
+
+                <div class="section-title">
+                    <h3>Actividad Mensual</h3>
+                </div>
+
+                <div class="chart">
+
+                    <div class="bar" style="height:70%">
+                        <span>Ene</span>
+                    </div>
+
+                    <div class="bar" style="height:45%">
+                        <span>Feb</span>
+                    </div>
+
+                    <div class="bar" style="height:90%">
+                        <span>Mar</span>
+                    </div>
+
+                    <div class="bar" style="height:65%">
+                        <span>Abr</span>
+                    </div>
+
+                    <div class="bar" style="height:82%">
+                        <span>May</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TABLE -->
+
+        <section class="table-card">
+
+            <div class="section-title">
+                <h3>Historial Financiero</h3>
+            </div>
+
+            <table class="table">
+
+                <thead>
+
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Tipo</th>
+                        <th>Fecha</th>
+                        <th>Monto</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Salario</td>
+                        <td>Ingreso</td>
+                        <td>01 Mayo</td>
+                        <td>$2,500</td>
+                    </tr>
+
+                    <tr>
+                        <td>Supermercado</td>
+                        <td>Gasto</td>
+                        <td>03 Mayo</td>
+                        <td>$220</td>
+                    </tr>
+
+                    <tr>
+                        <td>Netflix</td>
+                        <td>Suscripción</td>
+                        <td>04 Mayo</td>
+                        <td>$19</td>
+                    </tr>
+
+                    <tr>
+                        <td>Electricidad</td>
+                        <td>Servicio</td>
+                        <td>05 Mayo</td>
+                        <td>$110</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+
+/* =========================================================
+FINANCIAL AI ANALYSIS
+========================================================= */
+
+function analyzeFinance(){
+
+    const money =
+        Number(document.getElementById("money").value);
+
+    const income =
+        Number(document.getElementById("monthlyIncome").value);
+
+    const expenses =
+        Number(document.getElementById("monthlyExpenses").value);
+
+    const goal =
+        document.getElementById("goal").value;
+
+    const saving = income - expenses;
+
+    let level = "";
+    let risk = "";
+    let recommendation = "";
+    let message = "";
+
+    // BALANCE
+    document.getElementById("balance").innerHTML =
+        "$" + money;
+
+    document.getElementById("income").innerHTML =
+        "$" + income;
+
+    document.getElementById("expenses").innerHTML =
+        "$" + expenses;
+
+    document.getElementById("saving").innerHTML =
+        "$" + saving;
+
+    // AI ANALYSIS
+
+    if(saving > income * 0.4){
+
+        level = "Excelente";
+        risk = "Muy Bajo";
+        recommendation = "Invertir";
+
+        message =
+        "Tu situación financiera es muy sólida. Tienes una excelente capacidad de ahorro y estabilidad económica.";
+
+    }
+
+    else if(saving > income * 0.2){
+
+        level = "Buena";
+        risk = "Moderado";
+        recommendation = "Optimizar";
+
+        message =
+        "Tus finanzas son saludables, pero puedes mejorar reduciendo pequeños gastos innecesarios.";
+
+    }
+
+    else{
+
+        level = "Inestable";
+        risk = "Alto";
+        recommendation = "Reducir Gastos";
+
+        message =
+        "Tus gastos son elevados respecto a tus ingresos. Se recomienda reorganizar prioridades financieras.";
+
+    }
+
+    // INSERT DATA
+
+    document.getElementById("level").innerHTML =
+        level;
+
+    document.getElementById("capacity").innerHTML =
+        "$" + saving;
+
+    document.getElementById("risk").innerHTML =
+        risk;
+
+    document.getElementById("recommendation").innerHTML =
+        recommendation;
+
+    document.getElementById("message").innerHTML =
+        message;
+
+    document.getElementById("result").style.display =
+        "block";
+
+}
+
+</script>
+
+</body>
+</html>
